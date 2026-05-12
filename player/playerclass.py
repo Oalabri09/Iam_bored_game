@@ -23,26 +23,26 @@ class Player(pygame.sprite.Sprite):
 
 
         self.update_image()
-        self.rect = self.image.get_rect(topleft=(400, 300))
+        self.rect = self.image.get_rect(topleft=(270, 500))
         self.speed = 5
 
     def handle_input(self,dt):
         keys = pygame.key.get_pressed()
         is_moving = False
 
-        if keys[pygame.K_w]:
+        if keys[pygame.K_w] or keys[pygame.K_UP]:
             self.rect.y -= self.speed
             self.direction_row = 1
             is_moving = True
-        if keys[pygame.K_s]:
+        if keys[pygame.K_s] or keys[pygame.K_DOWN]:
             self.rect.y += self.speed
             self.direction_row = 0
             is_moving = True
-        if keys[pygame.K_a]:
+        if keys[pygame.K_a] or keys[pygame.K_LEFT]:
             self.rect.x -= self.speed
             self.direction_row = 2
             is_moving = True
-        if keys[pygame.K_d]:
+        if keys[pygame.K_d] or keys[pygame.K_RIGHT]:
             self.rect.x += self.speed
             self.direction_row = 3
             is_moving = True

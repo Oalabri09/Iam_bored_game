@@ -108,13 +108,13 @@ def play_2048(screen):
                         return "BACK_TO_MAP"
 
                     if not thisgame.is_game_over(): 
-                        if event.key == pygame.K_LEFT:
+                        if event.key == pygame.K_LEFT or event.key == pygame.K_a:
                             thisgame.move_left()
-                        if event.key == pygame.K_RIGHT:
+                        if event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                             thisgame.move_right()
-                        if event.key == pygame.K_UP:
+                        if event.key == pygame.K_UP or event.key == pygame.K_w:
                             thisgame.move_up()
-                        if event.key == pygame.K_DOWN:
+                        if event.key == pygame.K_DOWN or event.key == pygame.K_s:
                             thisgame.move_down()
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
